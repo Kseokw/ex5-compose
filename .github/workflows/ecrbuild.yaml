@@ -38,7 +38,7 @@ jobs:
       uses: aws-actions/amazon-ecr-login@v2 
 
     - name: Build and push Docker image to ECR
-       env:
+      #  env:
       #   ECR_REGISTRY: ${{}}
       #   ECR_REPOSITORY: ${{}}
       #   IMAGE_TAG: ${{github.sha}}
