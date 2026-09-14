@@ -33,7 +33,7 @@ jobs:
 
     - name: S3 정적웹사이트로 배포
       run: |
-       aws s3 cp ./docker-compose.yaml s3://std07-git-web-s3/docker-compose.yaml --delete
+       aws s3 cp ./docker-compose.yaml s3://std07-git-web-s3/docker-compose.yaml
   
     # ECR에 DOCKER 이미지 빌드 및 푸시
     # 이거는 git에서 시키는 ubuntu가 하는거야? ec2가 하는거야?
