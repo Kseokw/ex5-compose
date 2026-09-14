@@ -63,10 +63,8 @@ jobs:
           \"sudo aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 925047940866.dkr.ecr.ap-southeast-1.amazonaws.com\",
           \"sudo docker stop nginx-container || true\",
           \"sudo docker rm nginx-container\",
-          \"sudo aws s3 cp s3://std07-git-web-s3/docker-compose.yaml ./docker-compose.yaml\",
-          \"docker compose pull\"
-          # \"docker compose up -d --remove-orphans\",
-          # \"docker image prune -f\"
+          \"sudo aws s3 cp s3://std07-git-web-s3/docker-compose.yaml /docker-compose.yaml\",
+          \"sudo docker compose pull\"
         ]" \
         --region ${{secrets.AWS_REGION}} \
         --comment "Deploying SSM Docker"
@@ -74,3 +72,5 @@ jobs:
 
     # \"docker compose up -d --remove-orphans\" 현재 compose 안에 정의된 모든 서비스를 실행하고 파일과 일치하지 않는 서비스는 삭제
     # \"dockre image prune -f\" 현재 사용되지 않는 이미지삭제
+          #     \"docker compose up -d --remove-orphans\",
+          # \"docker image prune -f\"
