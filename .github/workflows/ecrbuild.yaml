@@ -67,7 +67,7 @@ jobs:
           \"sudo aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 925047940866.dkr.ecr.ap-southeast-1.amazonaws.com\",
           \"sudo docker stop nginx-container || true\",
           \"sudo docker rm nginx-container\",
-          \"sudo aws s3 cp s3://std07-git-web-s3/docker-compose.yaml /docker-compose.yaml\",
+          \"sudo aws s3 cp s3://std07-git-web-s3/docker-compose.yaml .\",
           \"sudo docker compose pull\",
           \"sudo docker compose up -d --remove-orphans\",
           \"sudo docker image prune -f\"
